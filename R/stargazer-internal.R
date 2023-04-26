@@ -1988,11 +1988,11 @@ function(libname, pkgname) {
       process.string <- ""
       return.vector <- NULL
       
+      if (length(s) > 1) { return("") }
       if (!is.character(s)) { return("") }
       if (is.null(s)) { return("") }
-      # if (is.na(s)) { return("") }
+      if (is.na(s)) { return("") }
       if (s=="") { return("") }
-      if (length(s) > 1) { return("") }
       
       inside.inner.bracket <- 0
       for (i in seq(from = (regexpr("(",s,fixed=TRUE)[1])+1, to = nchar(s))) {
